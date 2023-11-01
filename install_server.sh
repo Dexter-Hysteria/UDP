@@ -30,8 +30,8 @@ SYSTEMD_SERVICES_DIR="/etc/systemd/system"
 CONFIG_DIR="/etc/hysteria"
 
 # URLs of GitHub
-REPO_URL="https://github.com/RepositoriesDexter/Hysteria"
-API_BASE_URL="https://api.github.com/repos/RepositoriesDexter/Hysteria"
+REPO_URL="https://github.com/apernet/hysteria"
+API_BASE_URL="https://api.github.com/repos/apernet/hysteria"
 
 # curl command line flags.
 # To using a proxy, please specify ALL_PROXY in the environ variable, such like:
@@ -575,7 +575,7 @@ parse_arguments() {
         fi
         shift
         if ! has_prefix "$VERSION" 'v'; then
-          show_argument_error_and_exit "Version numbers should begin with 'v' (such like 'v1.3.5'), got '$VERSION'"
+          show_argument_error_and_exit "Version numbers should begin with 'v' (such like 'v1.3.1'), got '$VERSION'"
         fi
         ;;
       '-c' | '--check')
@@ -933,7 +933,7 @@ perform_install() {
     echo
     echo -e "$(tbold)Hysteria has been successfully update to $VERSION.$(treset)"
     echo
-    echo -e "Check out the latest changelog $(tblue)https://github.com/RepositoriesDexter/Hysteria/blob/master/CHANGELOG.md$(treset)"
+    echo -e "Check out the latest changelog $(tblue)https://github.com/apernet/hysteria/blob/master/CHANGELOG.md$(treset)"
     echo
   fi
 }
