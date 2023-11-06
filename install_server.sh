@@ -642,7 +642,6 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$EXECUTABLE_INSTALL_PATH -config ${_config_name}.json server
 WorkingDirectory=$CONFIG_DIR
 User=$HYSTERIA_USER
 Group=$HYSTERIA_USER
@@ -728,7 +727,7 @@ stop_running_services() {
 ###
 # HYSTERIA & GITHUB API
 ###
-
+#ExecStart=$EXECUTABLE_INSTALL_PATH -config ${_config_name}.json server
 is_hysteria_installed() {
   # RETURN VALUE
   # 0: hysteria is installed
