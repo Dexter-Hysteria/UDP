@@ -642,7 +642,6 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$EXECUTABLE_INSTALL_PATH -config ${_config_name}.json server
 WorkingDirectory=$CONFIG_DIR
 User=$HYSTERIA_USER
 Group=$HYSTERIA_USER
@@ -786,7 +785,7 @@ check_update() {
   # RETURN VALUE
   # 0: update available
   # 1: installed version is latest
-
+  #ExecStart=$EXECUTABLE_INSTALL_PATH -config ${_config_name}.json server
   echo -ne "Checking for installed version ... "
   local _installed_version="$(get_installed_version)"
   if [[ -n "$_installed_version" ]]; then
