@@ -581,8 +581,6 @@ sudo service dropbear restart
 #====================================================
 
 install_slowdns (){
-echo "Installing dns..."
-{
 dnsresolverName="Cloudflare (1.1.1.1)"
 dnsresolverType="udp"
 dnsresolver="1.1.1.1:53"
@@ -754,8 +752,6 @@ systemctl enable server-sldns
 systemctl start client-sldns
 systemctl start server-sldns
 #systemctl start server-dig
-
-} &>/dev/null
 }
 
 #====================================================
