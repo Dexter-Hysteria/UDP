@@ -7,11 +7,6 @@ DBNAME='firenetv_legitvpnpanel';
 PORT_TCP='1194';
 PORT_UDP='110';
 PORT_SSL='447';
-OBFS='mediatekvpn';
-HYSTERIA_TYPE='default';
-API_LINK='https://eftabsprovpn.tech/api/authentication/premium';
-API_KEY='DexterEskalarte';
-
 
 timedatectl set-timezone Asia/Riyadh
 
@@ -128,9 +123,9 @@ wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/python
 dos2unix /etc/socks-ws-ssh.py
 chmod +x /etc/socks-ws-ssh.py
 
-wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/python/socks-ws-ssl.py' -O /etc/socks-ws-ssl.py
-dos2unix /etc/socks-ws-ssl.py
-chmod +x /etc/socks-ws-ssl.py
+#wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/python/socks-ws-ssl.py' -O /etc/socks-ws-ssl.py
+#dos2unix /etc/socks-ws-ssl.py
+#chmod +x /etc/socks-ws-ssl.py
 
 rm /etc/apt/sources.list
 sudo cp /etc/apt/sources.list_backup /etc/apt/sources.list
@@ -534,6 +529,10 @@ accept = PORT_SSL
 [openvpn-udp]
 connect = PORT_UDP
 accept = 444
+
+[ws]
+connect = 80
+accept = 443
 
 [ssh]
 connect = 22
