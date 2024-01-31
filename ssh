@@ -629,24 +629,24 @@ secretkey='server'
 #API Details
 VPN_Owner='Firenet';
 
-cat <<EOF >/home/authentication.sh
+cat <<EOF >/root/authentication.sh
 #!/bin/bash
 SHELL=/bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-wget -O /home/active.sh "https://eftabsprovpn.tech/api/authentication/active.php?key=DexterEskalarte"
+wget -O /root/active.sh "https://eftabsprovpn.tech/api/authentication/active.php?key=DexterEskalarte"
 sleep 5
-wget -O /home/inactive.sh "https://eftabsprovpn.tech/api/authentication/inactive.php?key=DexterEskalarte"
+wget -O /root/inactive.sh "https://eftabsprovpn.tech/api/authentication/inactive.php?key=DexterEskalarte"
 sleep 5
-wget -O /home/deleted.sh "https://eftabsprovpn.tech/api/authentication/deleted.php?key=DexterEskalarte"
+wget -O /root/deleted.sh "https://eftabsprovpn.tech/api/authentication/deleted.php?key=DexterEskalarte"
 sleep 15
-bash /home/active.sh
+bash /root/active.sh
 sleep 15
-bash /home/inactive.sh
+bash /root/inactive.sh
 sleep 15
-bash /home/deleted.sh
+bash /root/deleted.sh
 EOF
 
-echo -e "* *\t* * *\troot\tsudo bash /home/authentication.sh" >> "/etc/cron.d/account"
+echo -e "* *\t* * *\troot\tsudo bash /root/authentication.sh" >> "/etc/cron.d/account"
 
 echo "Hi! this is your server information, Happy Surfing!
 
